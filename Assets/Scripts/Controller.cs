@@ -36,14 +36,14 @@ public class Controller : MonoBehaviour
                     {
                         // transform.position += transform.forward * 0.1f;
                         transform.position += v * 0.1f;
-                        transform.Rotate(new Vector3(0, 1, 0), 1); ;
+                        // transform.Rotate(new Vector3(0, 1, 0), 1); ;
                         pos = t.position.x;
                     }
                     else if (pos < t.position.x)
                     {
                         // transform.position -= transform.forward * 0.1f;
                         transform.position -= v * 0.1f;
-                        transform.Rotate(new Vector3(0, 1, 0), -1); ;
+                        // transform.Rotate(new Vector3(0, 1, 0), -1); ;
                         pos = t.position.x;
                     }
                     if (pos_y > t.position.y)
