@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
-
     private float pos;
     private float pos_y;
     private Vector3 v = new Vector3(0, 0, 1);
@@ -34,36 +33,70 @@ public class Controller : MonoBehaviour
                 {
                     if (pos > t.position.x)
                     {
-                        // transform.position += transform.forward * 0.1f;
-                        transform.position += v * 0.1f;
-                        // transform.Rotate(new Vector3(0, 1, 0), 1); ;
+                        left_proc();
                         pos = t.position.x;
                     }
                     else if (pos < t.position.x)
                     {
-                        // transform.position -= transform.forward * 0.1f;
-                        transform.position -= v * 0.1f;
-                        // transform.Rotate(new Vector3(0, 1, 0), -1); ;
+                        right_proc();
                         pos = t.position.x;
                     }
                     if (pos_y > t.position.y)
                     {
-                        transform.position -= vy * 0.05f;
+                        down_proc();
+                        // transform.position -= vy * 0.05f;
                         pos_y = t.position.y;
                     }
                     else if (pos_y < t.position.y)
                     {
-                        transform.position += vy * 0.05f;
+                        up_proc();
+                        // transform.position += vy * 0.05f;
                         pos_y = t.position.y;
                     }
                 }
             }
         }
 
-        // if (Input.GetKey(KeyCode.LeftArrow)) {
-        //     transform.position += transform.forward * 0.1f;
-        // }else if (Input.GetKey(KeyCode.RightArrow)) {
-        //     transform.position -= transform.forward * 0.1f;
-        // }
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            left_proc();
+        }
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            right_proc();
+        }
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            up_proc();
+        }
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            down_proc();
+        }
+        transform.LookAt(Vector3.zero);
+    }
+
+    void left_proc()
+    {
+        // transform.position += transform.forward * 0.1f;
+        transform.position += v * 0.1f;
+        // transform.Rotate(new Vector3(0, 1, 0), 1);
+        // transform.Rotate(5.0f, 0.0f, 0.0f, Space.World);
+        // transform.rotation= new Vector3(0f, 0f, 0f);;
+        // transform.LookAt(Vector3.zero);
+    }
+    void right_proc()
+    {
+        // transform.position -= transform.forward * 0.1f;
+        transform.position -= v * 0.1f;
+        // transform.Rotate(new Vector3(0, 1, 0), -1);
+    }
+    void up_proc()
+    {
+        transform.position += vy * 0.05f;
+    }
+    void down_proc()
+    {
+        transform.position -= vy * 0.05f;
     }
 }
