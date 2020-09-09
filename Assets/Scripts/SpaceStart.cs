@@ -23,8 +23,8 @@ public class SpaceStart : MonoBehaviour {
 				}
 			}
 		}
-        // if (Input.GetKey(KeyCode.Space)) {
-        //     SceneManager.LoadScene("Main");
-        // }
+        if (Input.GetKey(KeyCode.Space)) {
+            SceneManager.LoadScene("Main");
+        }
     }
 }
