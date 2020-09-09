@@ -10,8 +10,8 @@ public class StartShot : MonoBehaviour
     void Start()
     {
         transform.position = new Vector3(0, 0.4f, 0);
-        // transform.eulerAngles = new Vector3(45, Random.Range(30, 120), 0);
-        transform.eulerAngles = new Vector3(45, 90, 0);
+        transform.eulerAngles = new Vector3(0, Random.Range(30, 120), 0);
+        // transform.eulerAngles = new Vector3(45, 90, 0);
         rigid = gameObject.GetComponent<Rigidbody>();
         rigid.AddForce(transform.forward * 500);
     }
