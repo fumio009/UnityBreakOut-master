@@ -73,11 +73,15 @@ public class Controller : MonoBehaviour
         {
             down_proc();
         }
-        transform.LookAt(Vector3.zero);
+        // transform.LookAt(Vector3.zero);
+        transform.LookAt(new Vector3(10.0f, 0.5f, 0));
 
         Vector3 position = transform.position;
-        position.y = 0.5f;
-        transform.position = position;
+        if (position.y > 1.0f)
+        {
+            position.y = 0.5f;
+            transform.position = position;
+        }
     }
 
     void left_proc()
