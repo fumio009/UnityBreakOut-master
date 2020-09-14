@@ -14,6 +14,7 @@ public class StartShot : MonoBehaviour
         // transform.eulerAngles = new Vector3(45, 90, 0);
         rigid = gameObject.GetComponent<Rigidbody>();
         rigid.AddForce(transform.forward * 500);
+        Debug.Log("****************** Start ********************");
     }
 
     // Update is called once per frame
@@ -23,9 +24,9 @@ public class StartShot : MonoBehaviour
         {
             transform.position = new Vector3(0, 0.4f, 0);
         }
-        if (rigid.velocity.magnitude < 10f)
+        if (rigid.velocity.magnitude < 5f)
         {
-            rigid.AddForce(transform.forward * 500);
+            rigid.AddForce(transform.forward * 100);
         }
     }
 }
