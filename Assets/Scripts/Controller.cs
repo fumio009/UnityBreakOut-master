@@ -20,6 +20,7 @@ public class Controller : MonoBehaviour
     void Update()
     {
 
+#if UNITY_ANDROID
         if (Input.touchCount > 0)
         {
             foreach (Touch t in Input.touches)
@@ -56,7 +57,9 @@ public class Controller : MonoBehaviour
                 }
             }
         }
+#endif
 
+#if UNITY_EDITOR
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             left_proc();
@@ -73,7 +76,8 @@ public class Controller : MonoBehaviour
         {
             down_proc();
         }
-        // transform.LookAt(Vector3.zero);
+#endif
+
         transform.LookAt(new Vector3(10.0f, 0.5f, 0));
 
         Vector3 position = transform.position;
@@ -86,18 +90,11 @@ public class Controller : MonoBehaviour
 
     void left_proc()
     {
-        // transform.position += transform.forward * 0.1f;
         transform.position += v * 0.1f;
-        // transform.Rotate(new Vector3(0, 1, 0), 1);
-        // transform.Rotate(5.0f, 0.0f, 0.0f, Space.World);
-        // transform.rotation= new Vector3(0f, 0f, 0f);;
-        // transform.LookAt(Vector3.zero);
     }
     void right_proc()
     {
-        // transform.position -= transform.forward * 0.1f;
         transform.position -= v * 0.1f;
-        // transform.Rotate(new Vector3(0, 1, 0), -1);
     }
     void up_proc()
     {

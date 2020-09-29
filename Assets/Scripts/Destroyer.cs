@@ -17,6 +17,7 @@ public class Destroyer : MonoBehaviour {
 	}
 
     private void OnCollisionEnter(Collision collision) {
+		// collision.GetType
         masterObj.GetComponent<GameMaster>().boxNum--;
         Destroy(gameObject);
     }
