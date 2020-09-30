@@ -8,10 +8,10 @@ public class CameraInit : MonoBehaviour
     Camera refCamera;
 
     [SerializeField]
-    int width = 1920;
+    int width = 640;
 
     [SerializeField]
-    int height = 1080;
+    int height = 960;
 
     [SerializeField]
     float pixelPerUnit = 100f;
