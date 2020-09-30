@@ -397,8 +397,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   refCamera: {fileID: 0}
-  width: 800
-  height: 1080
+  width: 640
+  height: 960
   pixelPerUnit: 100
 --- !u!20 &282840813
 Camera:
